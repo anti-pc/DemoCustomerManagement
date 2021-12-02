@@ -73,6 +73,7 @@ namespace WebApi.Controllers
             if (customer is not null)
                 return BadRequest();
 
+            newCustomer.Id = CustomerList.Max(x => x.Id) + 1;
             CustomerList.Add(newCustomer);
 
             return Ok(); 

@@ -10,7 +10,7 @@ namespace WebApi.TokenAuthentication
 
         public TokenManager()
         {
-            listTokens = new List<Token>();
+            listTokens = new List<Token>() { new Token { Value = "be5cf12e-c449-4ff7-bfbc-38210ebe03df", ExpirationDate = DateTime.Now.AddDays(1) } };
         }
 
         public bool Authenticate(string username, string password)

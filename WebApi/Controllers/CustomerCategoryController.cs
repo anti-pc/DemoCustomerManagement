@@ -65,6 +65,7 @@ namespace WebApi.Controllers
             if (customerCategory is not null)
                 return BadRequest();
 
+            newCustomerCategory.Id = CustomerCategoryList.Max(x => x.Id) + 1;
             CustomerCategoryList.Add(newCustomerCategory);
 
             return Ok();
