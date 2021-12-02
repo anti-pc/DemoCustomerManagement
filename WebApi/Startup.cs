@@ -43,6 +43,11 @@ namespace WebApi
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CustomerWebApi v1"));
             }
 
+            app.UseCors(x => x
+               .AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader());
+
             app.UseHttpsRedirection();
 
             app.UseMiddleware<LoggingHandler>();
